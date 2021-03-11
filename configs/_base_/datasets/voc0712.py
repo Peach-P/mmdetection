@@ -42,14 +42,14 @@ data = dict(
                 # data_root + 'VOC2012/ImageSets/Main/trainval.txt' 
             # ],  commented these lines by xp
             ann_file=[
-                data_root + 'VOC2007/ImageSets/Main/trainval.txt'
+                data_root + 'VOC2007/ImageSets/Main/train.txt'
             ],
 #             img_prefix=[data_root + 'VOC2007/', data_root + 'VOC2012/'], commeted this line by xp
             img_prefix=[data_root + 'VOC2007/'],
             pipeline=train_pipeline)),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'VOC2007/ImageSets/Main/test.txt',
+        ann_file=data_root + 'VOC2007/ImageSets/Main/val.txt',
         #img_prefix=data_root + 'VOC2007/',   commeted this line by xp
         img_prefix=data_root + 'VOC2007/',
         pipeline=test_pipeline),
