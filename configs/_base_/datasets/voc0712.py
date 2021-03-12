@@ -42,7 +42,7 @@ data = dict(
                 # data_root + 'VOC2012/ImageSets/Main/trainval.txt' 
             # ],  commented these lines by xp
             ann_file=[
-                data_root + 'VOC2007/ImageSets/Main/train.txt'
+                data_root + 'VOC2007/ImageSets/Main/train.txt',
             ],
 #             img_prefix=[data_root + 'VOC2007/', data_root + 'VOC2012/'], commeted this line by xp
             img_prefix=[data_root + 'VOC2007/'],
