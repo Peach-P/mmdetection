@@ -11,9 +11,12 @@ def voc_classes():
 #         '椅子', '牛', '犀牛', '狗', '马', '摩托', '人',
 #         '盆栽植物', '绵羊', '沙发', '火车', '电视监视器'
 #     ]   
-     return [
-        '气孔', '夹渣', '焊瘤', '裂纹', '咬边', '未熔合', '未焊透', '烧穿', '焊缝', '成形不良', '内凹', '异物', '伪缺陷'
-    ]   
+#      return [
+#         '气孔', '夹渣', '焊瘤', '裂纹', '咬边', '未熔合', '未焊透', '烧穿', '焊缝', '成形不良', '内凹', '异物', '伪缺陷'
+#     ]   
+    return [
+            'porosity', 'lack_of_penetration', 'lack_of_fusion', 'overlap', '', 'foreign_object', 'weld'
+        ]   
 #     return [
 #         'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat',
 #         'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person',
