@@ -10,17 +10,13 @@ from .xml_style import XMLDataset
 @DATASETS.register_module()
 class VOCDataset(XMLDataset):
     
-#     CLASSES =   ('飞机', '自行车', '鸟', '船', '瓶子', '汽车', '小汽车', '猫',
-#         '椅子', '牛', '犀牛', '狗', '马', '摩托', '人',
-#         '盆栽植物', '绵羊', '沙发', '火车', '电视监视器') 
-
 #     CLASSES = ('aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car',
 #                'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse',
 #                'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train',
 #                'tvmonitor')       
             
 #     CLASSES = ('气孔', '夹渣', '焊瘤', '裂纹', '咬边', '未熔合', '未焊透', '烧穿', '焊缝', '成形不良', '内凹', '异物', '伪缺陷')
-    ClASSEA = ('porosity', 'lack_of_penetration', 'lack_of_fusion', 'overlap', 'foreign_object', 'weld')
+    ClASSES = ('porosity', 'lack_of_penetration', 'lack_of_fusion', 'overlap', 'foreign_object', 'weld')
 
     def __init__(self, **kwargs):
         super(VOCDataset, self).__init__(**kwargs)
