@@ -20,7 +20,7 @@ class VOCDataset(XMLDataset):
 #                'tvmonitor')       
             
 #     CLASSES = ('气孔', '夹渣', '焊瘤', '裂纹', '咬边', '未熔合', '未焊透', '烧穿', '焊缝', '成形不良', '内凹', '异物', '伪缺陷')
-    ClASSEA = ('porosity', 'lack_of_penetration', 'lack_of_fusion', 'overlap', '', 'foreign_object', 'weld')
+    ClASSEA = ('porosity', 'lack_of_penetration', 'lack_of_fusion', 'overlap', 'foreign_object', 'weld')
 
     def __init__(self, **kwargs):
         super(VOCDataset, self).__init__(**kwargs)
