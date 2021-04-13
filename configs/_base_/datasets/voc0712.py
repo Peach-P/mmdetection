@@ -59,5 +59,4 @@ data = dict(
         # img_prefix=data_root + 'VOC2007/',
         img_prefix=data_root + 'VOC2007/',
         pipeline=test_pipeline))
-# evaluation = dict(interval=1, metric='mAP')
-evaluation = dict(interval=5, metric='mAP')
+evaluation = dict(interval=1, metric='mAP')
