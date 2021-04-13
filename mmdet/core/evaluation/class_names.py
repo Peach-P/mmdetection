@@ -9,7 +9,7 @@ def voc_classes():
 #      return [
 #         '气孔', '夹渣', '焊瘤', '裂纹', '咬边', '未熔合', '未焊透', '烧穿', '焊缝', '成形不良', '内凹', '异物', '伪缺陷'
 #     ]   
-    return ['气孔', '未焊透', '未熔合', '焊瘤', '异物', '焊缝']   
+    return ['焊缝', '未焊透', '未熔合', '气孔']   
 #     return [
 #         'aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat',
 #         'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person',
