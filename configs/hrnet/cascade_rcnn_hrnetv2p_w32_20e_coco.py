@@ -37,4 +37,4 @@ model = dict(
 # learning policy
 lr_config = dict(step=[16, 19])
 # runner = dict(type='EpochBasedRunner', max_epochs=20)
-runner = dict(type='EpochBasedRunner', max_epochs=200)
+runner = dict(type='EpochBasedRunner', max_epochs=500)
