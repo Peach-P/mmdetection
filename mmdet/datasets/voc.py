@@ -9,6 +9,7 @@ from .xml_style import XMLDataset
 
 @DATASETS.register_module()
 class VOCDataset(XMLDataset):
+     
      CLASSES = ('气孔', '夹渣', '焊瘤', '裂纹', '咬边', '未熔合', '未焊透', '烧穿',  '成形不良', '内凹',  '伪缺陷')
     
 #     CLASSES = ('aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car',
