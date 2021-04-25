@@ -9,6 +9,7 @@ from .xml_style import XMLDataset
 
 @DATASETS.register_module()
 class VOCDataset(XMLDataset):
+     CLASSES = ('气孔', '夹渣', '焊瘤', '裂纹', '咬边', '未熔合', '未焊透', '烧穿',  '成形不良', '内凹',  '伪缺陷')
     
 #     CLASSES = ('aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car',
 #                'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse',
@@ -17,7 +18,7 @@ class VOCDataset(XMLDataset):
             
 #     CLASSES = ('气孔', '夹渣', '焊瘤', '裂纹', '咬边', '未熔合', '未焊透', '烧穿', '焊缝', '成形不良', '内凹', '异物', '伪缺陷')
 #     CLASSES = ('焊缝', '未焊透', '未熔合', '气孔')
-      CLASSES = ('气孔', '夹渣', '焊瘤', '裂纹', '咬边', '未熔合', '未焊透', '烧穿',  '成形不良', '内凹',  '伪缺陷')
+     
 
     def __init__(self, **kwargs):
         super(VOCDataset, self).__init__(**kwargs)
