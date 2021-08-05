@@ -1,7 +1,7 @@
 # dataset settings
 dataset_type = 'VOCDataset'
 #data_root = 'data/VOCdevkit/'
-data_root = '/xiaopeng/'
+data_root = '/xiaopeng/cascade-13class-dataset'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -47,19 +47,19 @@ data = dict(
                 # data_root + 'VOC2012/ImageSets/Main/trainval.txt' 
             # ],  commented these lines by xp
 #             img_prefix=[data_root + 'VOC2007/', data_root + 'VOC2012/'], commeted this line by xp
-            ann_file = data_root + 'VOC2007/ImageSets/Main/train.txt',
-            img_prefix= data_root + 'VOC2007/',
+            ann_file = data_root + 'ImageSets/Main/train.txt',
+            img_prefix= data_root,
             pipeline=train_pipeline)),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'VOC2007/ImageSets/Main/val.txt',
+        ann_file=data_root + 'ImageSets/Main/val.txt',
         #img_prefix=data_root + 'VOC2007/',   commeted this line by xp
-        img_prefix=data_root + 'VOC2007/',
+        img_prefix=data_root,
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'VOC2007/ImageSets/Main/test.txt',
+        ann_file=data_root + 'ImageSets/Main/test.txt',
         # img_prefix=data_root + 'VOC2007/',
-        img_prefix=data_root + 'VOC2007/',
+        img_prefix=data_root,
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='mAP')
