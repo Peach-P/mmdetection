@@ -49,32 +49,39 @@ def myTest(root_dir, checkpoint_file_hanfeng, checkpoint_file_others,config_file
                 print(tmp_path+' 创建成功')
             
             # bbox_ = [int(i) for i in result_hanfeng[0][0][0:-1]]# 获得焊缝的4个坐标
-            bbox_ = [int(i) for i in result_hanfeng[8][0][0:-1]]# 获得焊缝的4个坐标
-            print('bbox_ coordinat', bbox_)
-            if crop_flag:
-              imgCrop_all.append(bbox_) 
-            else:
-                '''
-                检测气孔，需要裁剪，一共裁剪为4份
-                xmin,ymin,xmax,ymax
-                '''
-                imgCrop1 = [bbox_[0],bbox_[1],int((bbox_[0]+bbox_[2])/2),int((bbox_[1]+bbox_[3])/2)]
-                imgCrop_all.append(imgCrop1)
-                imgCrop2 = [int((bbox_[0]+bbox_[2])/2),bbox_[1],bbox_[2],int((bbox_[1]+bbox_[3])/2)]
-                imgCrop_all.append(imgCrop2)
-                imgCrop3 = [bbox_[0],int((bbox_[1]+bbox_[3])/2),int((bbox_[0]+bbox_[2])/2),bbox_[3]]
-                imgCrop_all.append(imgCrop3)
-                imgCrop4 = [int((bbox_[0]+bbox_[2])/2),int((bbox_[1]+bbox_[3])/2),bbox_[2],bbox_[3]]
-                imgCrop_all.append(imgCrop4)
-            print('img_cro_all',imgCrop_all)
-            for i,img in enumerate(imgCrop_all):
-                # image = cv2.imread(image_path, 2)
-                image = cv2.imread(image_path, -1)
-                new_img = image[img[1]:img[3], img[0]:img[2]]
-                new_img = Image.fromarray(np.uint16(new_img))
-                #save_path = os.path.join(root_dir, "tmp/"+ os.path.basename(image_path).split('.')[0] + '_'+str(i)+'.tif')
-                save_path = os.path.join(root_dir, "tmp/"+str(i)+'.tif')
-                new_img.save(save_path)
+            print('hf_geshu',result_hanfeng[8].size)
+            for j in range(result_hanfeng[8].size):
+              print('j_wei', j)
+            for j in range(result_hanfeng[8].size):
+            # bbox_ = [int(i) for i in result_hanfeng[8][0][0:-1]]# 获得焊缝的4个坐标
+              bbox_ = [int(i) for i in result_hanfeng[8][j][0:-1]]# 获得焊缝的4个坐标
+              print('bbox_ coordinat', bbox_)
+              if crop_flag:
+                imgCrop_all.append(bbox_) 
+              else:
+                  '''
+                  检测气孔，需要裁剪，一共裁剪为4份
+                  xmin,ymin,xmax,ymax
+                  '''
+                  imgCrop1 = [bbox_[0],bbox_[1],int((bbox_[0]+bbox_[2])/2),int((bbox_[1]+bbox_[3])/2)]
+                  imgCrop_all.append(imgCrop1)
+                  imgCrop2 = [int((bbox_[0]+bbox_[2])/2),bbox_[1],bbox_[2],int((bbox_[1]+bbox_[3])/2)]
+                  imgCrop_all.append(imgCrop2)
+                  imgCrop3 = [bbox_[0],int((bbox_[1]+bbox_[3])/2),int((bbox_[0]+bbox_[2])/2),bbox_[3]]
+                  imgCrop_all.append(imgCrop3)
+                  imgCrop4 = [int((bbox_[0]+bbox_[2])/2),int((bbox_[1]+bbox_[3])/2),bbox_[2],bbox_[3]]
+                  imgCrop_all.append(imgCrop4)
+              print('img_cro_all',imgCrop_all)
+              for i,img in enumerate(imgCrop_all):
+                  # image = cv2.imread(image_path, 2)
+                  image = cv2.imread(image_path, -1)
+                  new_img = image[img[1]:img[3], img[0]:img[2]]
+                  new_img = Image.fromarray(np.uint16(new_img))
+                  name = image_path.split('/')[-1][:-4]
+                  save_path = os.path.join(root_dir, "tmp/"+name+'_'+str(i)+'.tif')
+                  #save_path = os.path.join(root_dir, "tmp/"+ os.path.basename(image_path).split('.')[0] + '_'+str(i)+'.tif')
+                  #save_path = os.path.join(root_dir, "tmp/"+str(i)+'.tif')
+                  new_img.save(save_path)
                 # tif_to_jpg(os.path.join(root_dir, "tmp/"))
             # 其他缺陷检测
             # others_path = glob.glob(os.path.join(root_dir+'/tmp' + '/*.jpg')) # 所有图片路径
