@@ -11,7 +11,7 @@ from .xml_style import XMLDataset
 class VOCDataset(XMLDataset):
      
     #CLASSES = ('气孔', '夹渣', '焊瘤', '裂纹', '咬边', '未熔合', '未焊透', '烧穿', '焊缝', '成形不良', '内凹', '异物', '伪缺陷')
-    CLASSES = ('气孔', '未熔合', '未焊透', '焊瘤', '裂纹', '咬边', '内凹', '成形不良', '其它缺陷')
+    CLASSES = ('气孔', '未熔合', '未焊透', '焊瘤', '裂纹', '咬边', '内凹', '成形不良', '其它缺陷', '焊缝')
     
 #     CLASSES = ('aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car',
 #                'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse',
