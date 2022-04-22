@@ -29,22 +29,22 @@ img = get_file(path)
 result = inference_detector(model, img)
 
 
-# category_list = ['porosity','lack_of_fusion','lack_of_penetration','overlap','crack','undercut','hollow','faulty_formation','other']
-# output=[] # 输出
-# for single_img in result:
-#   single_output=[]
-#   for n,item in enumerate(single_img): # n是标签
-#     for box in item:
-#       score = box[4]
-#       xmin = int(box[0])
-#       xmax = int(box[2])
-#       ymin = int(box[1])
-#       ymax = int(box[3])
-#       w = xmax-xmin
-#       h = ymax-ymin
-#       di = {'category':category_list[n],'score':score,'bbox':[xmin,ymin,w,h]}
-#       single_output.append(di)
-#   output.append(single_output)
-# print(output)
+category_list = ['porosity','lack_of_fusion','lack_of_penetration','overlap','crack','undercut','hollow','faulty_formation','other']
+output=[] # 输出
+for single_img in result:
+  single_output=[]
+  for n,item in enumerate(single_img): # n是标签
+    for box in item:
+      score = box[4]
+      xmin = int(box[0])
+      xmax = int(box[2])
+      ymin = int(box[1])
+      ymax = int(box[3])
+      w = xmax-xmin
+      h = ymax-ymin
+      di = {'category':category_list[n],'score':score,'bbox':[xmin,ymin,w,h]}
+      single_output.append(di)
+  output.append(single_output)
+print(output)
 
-show_result(img, result, model.CLASSES, out_file='testOut.jpg')
+# show_result(img, result, model.CLASSES, out_file='testOut.jpg')
